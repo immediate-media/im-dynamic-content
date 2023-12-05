@@ -1,0 +1,69 @@
+{
+    "name": "immediate-media/m-dynamic-content",
+    "description": "Dynamic Content Plugin",
+    "type": "wordpress-plugin",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "IM\\Fabric\\Plugin\\DynamicContent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IM\\Fabric\\Plugin\\DynamicContent\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-types": [
+            "test-config"
+        ],
+        "installer-paths": {
+            "test-config": [
+                "immediate/wp-test-config"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "immediate/im-wp-plugin": "^2.0"
+    },
+    "require-dev": {
+        "10up/wp_mock": "^0.5",
+        "immediate/wp-test-config": "^1.0",
+        "roave/security-advisories": "dev-latest"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-wp-plugin.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-fabric-wordpress.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.immediate.co.uk:WCP-Packages/wp-test-config.git"
+        }
+    ],
+    "scripts": {
+        "run-tests": "composer run-phpunit && composer run-phpcs && composer run-phplint && composer run-phpmd",
+        "run-phpunit": "vendor/bin/phpunit --configuration test-config/phpunit.xml",
+        "run-phpcs": "vendor/bin/phpcs --standard=test-config/phpcs.xml",
+        "run-phplint": "vendor/bin/phplint --configuration test-config/phplint.yml",
+        "run-phpmd": "vendor/bin/phpmd src text test-config/phpmd-src.xml && vendor/bin/phpmd tests text test-config/phpmd-tests.xml"
+    }
+}
