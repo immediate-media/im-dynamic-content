@@ -13,6 +13,8 @@ if (! defined('ABSPATH')) {
     return;
 }
 
+define('IM_DYNAMIC_CONTENT_PLUGIN_ID', 'im-dynamic-content');
+
 // The following lines of code allows you to specify a local '/views' directory
 // Uncomment these lines if you wish to include views in the plugin
 //if (! class_exists(\Timber\Timber::class)) {

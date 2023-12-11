@@ -38,12 +38,15 @@
     },
     "require": {
         "php": "^8.1",
-        "immediate/im-wp-plugin": "^2.0"
+        "immediate/im-wp-plugin": "^2.0",
+        "immediate/im-form-wrapper": "^2.0",
+        "immediate-media/im-wp-post": "^1.0"
     },
     "require-dev": {
         "10up/wp_mock": "^0.5",
         "immediate/wp-test-config": "^1.0",
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "immediate/im-headless-api-contracts": "^1.5"
     },
     "repositories": [
         {
@@ -57,6 +60,18 @@
         {
             "type": "git",
             "url": "git@github.immediate.co.uk:WCP-Packages/wp-test-config.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-form-wrapper.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:immediate-media/im-wp-post.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-headless-api-contracts.git"
         }
     ],
     "scripts": {
