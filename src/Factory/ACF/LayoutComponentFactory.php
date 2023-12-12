@@ -90,79 +90,30 @@ class LayoutComponentFactory
                     'class' => 'im-no-label'
                 ],
             ]),
-            new Input(
-                __('Content Type', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                $formKey . '-is_related',
-                'true_false',
-                [
-                    'default_value' => 0,
-                    'ui' => true,
-                    'ui_on_text' => 'Related',
-                    'ui_off_text' => 'Latest',
-                ]
-            ),
-            new Input(__('Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-category_selection', 'true_false', [
-                'ui' => true,
-                'ui_on_text' => __('Specific', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                'ui_off_text' => __('All', IM_DYNAMIC_CONTENT_PLUGIN_ID)
-            ]),
-            new Input(
-                __('Select Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                $formKey . '-articles_category',
-                'select',
-                [
-                    'conditional_logic' => [
-                        [
-                            'field' => 'field_' . $formKey . '-category_selection',
-                            'operator' => '==',
-                            'value' => 1,
-                        ],
-                    ],
-                    'multiple' => true,
-                    'ui' => true,
-                    'choices' => $this->getCategories(),
-                    'default_value' => 0,
-                    'layout' => 'vertical',
-                    'save_terms' => true,
-                ]
-            ),
-            new Input(__('Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_selection', 'true_false', [
-                'ui' => true,
-                'ui_on_text' => __('Specific', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                'ui_off_text' => __('All', IM_DYNAMIC_CONTENT_PLUGIN_ID)
-            ]),
-            new Input(__('Select Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_type', 'select', [
-                'conditional_logic' => [
-                    [
-                        'field' => 'field_' . $formKey . '-articles_selection',
-                        'operator' => '==',
-                        'value' => 1,
-                    ],
-                ],
+            new Input(__('Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_category', 'select', [
+                'choices' => $this->getCategories(),
+                'instructions' => __('Select categories to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'layout' => 'vertical',
                 'multiple' => true,
+                'placeholder' => __('All Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'save_terms' => true,
                 'ui' => true,
+            ]),
+            new Input(__('Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_type', 'select', [
                 'choices' => $this->getPostTypes(),
+                'instructions' => __('Select post types to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'layout' => 'vertical',
-                'save_terms' => true,
-            ]),
-            new Input(__('Content Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-content_types_selection', 'true_false', [
-                'ui' => true,
-                'ui_on_text' => __('Specific', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                'ui_off_text' => __('All', IM_DYNAMIC_CONTENT_PLUGIN_ID)
-            ]),
-            new Input(__('Select content types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-content_type', 'select', [
-                'conditional_logic' => [
-                    [
-                        'field' => 'field_' . $formKey . '-content_types_selection',
-                        'operator' => '==',
-                        'value' => 1,
-                    ],
-                ],
                 'multiple' => true,
+                'placeholder' => __('All Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'ui' => true,
+            ]),
+            new Input(__('Content Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-content_type', 'select', [
                 'choices' => $this->getContentTypes(),
+                'instructions' => __('Select content types to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'layout' => 'vertical',
-                'save_terms' => true,
+                'multiple' => true,
+                'placeholder' => __('All Content Types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'ui' => true,
             ]),
             new Input(
                 __('Number of cards to display', IM_DYNAMIC_CONTENT_PLUGIN_ID),
@@ -210,8 +161,28 @@ class LayoutComponentFactory
                     'class' => 'im-no-label'
                 ],
             ]),
+            new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-related-message', 'message', [
+                'message' => '<hr/><em>' . __('Content lookup configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'wrapper' => [
+                    'class' => 'im-no-label'
+                ],
+            ]),
+            new Input(
+                __('Show Related Content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                $formKey . '-is_related',
+                'checkbox',
+                [
+                    'choices' => [
+                        'yes' => __("Surface content related to the current page", IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                    ],
+                    'return_format' => 'value',
+                    'wrapper' => [
+                        'class' => 'im-no-label'
+                    ],
+                ]
+            ),
             new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-pinned-message', 'message', [
-                'message' => '<hr/><em>' . __('Optional: Content overrides', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'message' => '<hr/><em>' . __('Content overrides', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
                 'wrapper' => [
                     'class' => 'im-no-label'
                 ],
