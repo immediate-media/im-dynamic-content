@@ -19,7 +19,7 @@ class LayoutComponentFactory
     public function create(string $formKey): Component
     {
         $buildPinnedContent = new Input(
-            __('Pinned Content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+            __('Global Pinned Content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
             $formKey . '-pinned-content',
             'repeater',
             [
