@@ -68,11 +68,6 @@ class LayoutComponentFactory
                 'return_format' => 'value',
                 'save_terms' => true,
             ]),
-            new Input(__('Card style', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-layout', 'true_false', [
-                'ui' => true,
-                'ui_on_text' => __('Vertical', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                'ui_off_text' => __('Horizontal', IM_DYNAMIC_CONTENT_PLUGIN_ID)
-            ]),
             new Input(__('Category Labels', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-category_labels', 'select', [
                 'field_type' => 'radio',
                 'choices' => [
@@ -116,7 +111,7 @@ class LayoutComponentFactory
                 'ui' => true,
             ]),
             new Input(
-                __('Number of cards to display', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                __('Number of cards to include', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 $formKey . '-number_of_articles',
                 'range',
                 [
