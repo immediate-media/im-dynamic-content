@@ -80,7 +80,8 @@ class LayoutComponentFactory
                 'save_terms' => true,
             ]),
             new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-filter-message', 'message', [
-                'message' => '<hr/><em>' . __('Content filtering configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'message' =>
+                    '<hr/><em>' . __('Content filtering configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
                 'wrapper' => [
                     'class' => 'im-no-label'
                 ],

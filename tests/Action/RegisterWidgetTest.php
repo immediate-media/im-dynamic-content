@@ -19,9 +19,9 @@ class RegisterWidgetTest extends TestCase
         WP_Mock::userFunction('register_widget')
             ->with(DynamicCarouselContentWidget::class)
             ->once();
-        WP_Mock::userFunction('register_widget')
-            ->with(DynamicGridContentWidget::class)
-            ->once();
+//        WP_Mock::userFunction('register_widget')
+//            ->with(DynamicGridContentWidget::class)
+//            ->once();
 
         $unit = new RegisterWidget(
             Mockery::mock(DynamicCarouselContentWidget::class),

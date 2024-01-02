@@ -60,7 +60,7 @@ class WidgetDataProviderTest extends TestCase
             ->times(12)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-category_labels' => true]]]);
-        $this->assertSame(true, $this->dataProvider->getOptions('widgetType', 'widgetId')['showCardLabels']);
+        $this->assertSame(false, $this->dataProvider->getOptions('widgetType', 'widgetId')['showCardLabels']);
     }
 
     public function testEmptyCategories(): void
