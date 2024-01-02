@@ -53,8 +53,9 @@ class WidgetDataProvider
 
         return match ($categoryLabels) {
             '0' => null,     // Use customiser setting
+            '1' => true,     // Show
             '2' => false,    // Hide
-            default => true, // Show
+            default => 0,    // Use customiser setting
         };
     }
 

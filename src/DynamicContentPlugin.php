@@ -18,7 +18,7 @@ class DynamicContentPlugin extends WordPressPlugin
         $this->wordPress->addAction('widgets_init', $this->get(Action\RegisterWidget::class));
 
         $this->wordPress->addAction('wp_loaded', $this->get(Action\RegisterCarouselLayoutComponent::class));
-        $this->wordPress->addAction('wp_loaded', $this->get(Action\RegisterGridLayoutComponent::class));
+        // $this->wordPress->addAction('wp_loaded', $this->get(Action\RegisterGridLayoutComponent::class));
 
         $this->wordPress->addFilter(
             FilterConstants::SETTINGS_WIDGET_DATA_TRANSFORMATION_FILTER,

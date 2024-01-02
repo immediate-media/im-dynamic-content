@@ -18,15 +18,15 @@ class LayoutComponentFactory
      */
     public function create(string $formKey): Component
     {
-        $config = new ComponentConfig($formKey, 'Dynamic Content', 'Dynamic Content Settings ');
-        $config->setOrder(20);
-        $config->setSeamless(false);
-
         $buildPinnedContent = new Input(
-            __('Pinned content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+            __('Global Pinned Content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
             $formKey . '-pinned-content',
             'repeater',
-            ['layout' => 'table',]
+            [
+                'wrapper' => [
+                    'class' => 'im-hide-column-1 im-no-inline-add'
+                ],
+            ]
         );
 
         $buildPinnedContent->addInputs(
@@ -36,8 +36,11 @@ class LayoutComponentFactory
                 'number',
                 [
                     'key' => $formKey . '-pinned-content_position',
-                    'label' => 'Position',
+                    'label' => __('Position', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                     'name' => 'position',
+                    'wrapper' => [
+                        'width' => '10',
+                    ],
                 ]
             ),
         );
@@ -45,31 +48,20 @@ class LayoutComponentFactory
         $buildPinnedContent->addInputs(
             new Input(__('Pinned content', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-pinned-content', 'post_object', [
                 'key' => $formKey . '-pinned-content_content',
-                'label' => 'Pinned content',
+                'label' => __('Pinned content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'name' => 'pinned_content',
                 'return_format' => 'id',
             ]),
         );
 
         return new Component(
-            $config,
+            new ComponentConfig($formKey, 'Dynamic Content', 'Dynamic Content Settings'),
             [],
-            new Input(
-                __('Make content related', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                $formKey . '-is_related',
-                'true_false',
-                [
-                    'default_value' => 0,
-                    'ui' => 1,
-                    'ui_on_text' => 'On',
-                    'ui_off_text' => 'Off'
-                ]
-            ),
-            new Input(__('Make content related', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-layout', 'true_false', [
-                'default_value' => 0,
-                'ui' => 1,
-                'ui_on_text' => __('Vertical', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                'ui_off_text' => __('Horizontal', IM_DYNAMIC_CONTENT_PLUGIN_ID)
+            new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-layout-message', 'message', [
+                'message' => '<em>' . __('Display configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'wrapper' => [
+                    'class' => 'im-no-label'
+                ],
             ]),
             new Input(__('Title', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-title', 'text', [
                 'field_type' => 'text',
@@ -87,87 +79,39 @@ class LayoutComponentFactory
                 'layout' => 'vertical',
                 'save_terms' => true,
             ]),
-            new Input(__('Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-category_selection', 'radio', [
-                'choices' => [
-                    0 => __('All categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                    1 => __('Specific categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+            new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-filter-message', 'message', [
+                'message' => '<hr/><em>' . __('Content filtering configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'wrapper' => [
+                    'class' => 'im-no-label'
                 ],
             ]),
-            new Input(
-                __('Select Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                $formKey . '-articles_category',
-                'select',
-                [
-                    'conditional_logic' => [
-                        [
-                            [
-                                'field' => 'field_' . $formKey . '-category_selection',
-                                'operator' => '==',
-                                'value' => 1,
-                            ],
-                        ],
-                    ],
-                    'multiple' => true,
-                    'ui' => true,
-                    'choices' => $this->getCategories(),
-                    'default_value' => 0,
-                    'layout' => 'vertical',
-                    'save_terms' => true,
-                ]
-            ),
-            new Input(__('Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_selection', 'radio', [
-                'choices' => [
-                    0 => __('All post types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                    1 => __('Specific post types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                ],
-            ]),
-            new Input(__('Select Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_type', 'select', [
-                'conditional_logic' => [
-                    [
-                        [
-                            'field' => 'field_' . $formKey . '-articles_selection',
-                            'operator' => '==',
-                            'value' => 1,
-                        ],
-                    ],
-                ],
+            new Input(__('Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_category', 'select', [
+                'choices' => $this->getCategories(),
+                'instructions' => __('Select categories to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'layout' => 'vertical',
                 'multiple' => true,
+                'placeholder' => __('All Categories', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'save_terms' => true,
                 'ui' => true,
+            ]),
+            new Input(__('Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-articles_type', 'select', [
                 'choices' => $this->getPostTypes(),
-                'default_value' => 0,
+                'instructions' => __('Select post types to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'layout' => 'vertical',
-                'save_terms' => true,
-            ]),
-            new Input(
-                __('Content types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                $formKey . '-content_types_selection',
-                'radio',
-                [
-                    'choices' => [
-                        0 => __('All content types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                        1 => __('Specific content types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
-                    ],
-                ]
-            ),
-            new Input(__('Select content types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-content_type', 'select', [
-                'conditional_logic' => [
-                    [
-                        [
-                            'field' => 'field_' . $formKey . '-content_types_selection',
-                            'operator' => '==',
-                            'value' => 1,
-                        ],
-                    ],
-                ],
                 'multiple' => true,
+                'placeholder' => __('All Post Types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'ui' => true,
+            ]),
+            new Input(__('Content Types', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-content_type', 'select', [
                 'choices' => $this->getContentTypes(),
-                'default_value' => 0,
+                'instructions' => __('Select content types to filter by', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'layout' => 'vertical',
-                'save_terms' => true,
+                'multiple' => true,
+                'placeholder' => __('All Content Types', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                'ui' => true,
             ]),
             new Input(
-                __('Number of cards to display', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                __('Number of cards to include', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 $formKey . '-number_of_articles',
                 'range',
                 [
@@ -208,6 +152,32 @@ class LayoutComponentFactory
                 ],
                 'return_format' => 'value',
                 'save_terms' => true,
+                'wrapper' => [
+                    'class' => 'im-no-label'
+                ],
+            ]),
+            new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-related-message', 'message', [
+                'message' => '<hr/><em>' . __('Content lookup configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
+                'wrapper' => [
+                    'class' => 'im-no-label'
+                ],
+            ]),
+            new Input(
+                __('Show Related Content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                $formKey . '-is_related',
+                'checkbox',
+                [
+                    'choices' => [
+                        'yes' => __("Surface content related to the current page", IM_DYNAMIC_CONTENT_PLUGIN_ID),
+                    ],
+                    'return_format' => 'value',
+                    'wrapper' => [
+                        'class' => 'im-no-label'
+                    ],
+                ]
+            ),
+            new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-pinned-message', 'message', [
+                'message' => '<hr/><em>' . __('Content overrides', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
                 'wrapper' => [
                     'class' => 'im-no-label'
                 ],
