@@ -7,6 +7,7 @@ namespace IM\Fabric\Plugin\DynamicContent\Test;
 use IM\Fabric\Package\HeadlessApiContracts\FilterConstants;
 use IM\Fabric\Package\Plugin\WordPressPlugin;
 use IM\Fabric\Package\WordPress\WordPress;
+use IM\Fabric\Plugin\DynamicContent\Action\LoadPluginTextDomain;
 use IM\Fabric\Plugin\DynamicContent\Action\RegisterCarouselLayoutComponent;
 use IM\Fabric\Plugin\DynamicContent\Action\RegisterGridLayoutComponent;
 use IM\Fabric\Plugin\DynamicContent\Action\RegisterWidget;
@@ -23,6 +24,7 @@ class DynamicContentPluginTest extends TestCase
         ['widgets_init', RegisterWidget::class],
         ['wp_loaded', RegisterCarouselLayoutComponent::class],
         ['wp_loaded', RegisterGridLayoutComponent::class],
+        ['plugins_loaded', LoadPluginTextDomain::class],
     ];
     private const EXPECTED_FILTERS = [
         [FilterConstants::SETTINGS_WIDGET_DATA_TRANSFORMATION_FILTER, WidgetSettings::class]

@@ -1,17 +1,15 @@
-# Copyright (C) 2024 Immediate Media
-# This file is distributed under the Proprietary.
 msgid ""
 msgstr ""
-"Project-Id-Version: IM Dynamic Content 0.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/im-dynamic-content\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-02T13:55:49+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"POT-Creation-Date: 2024-01-02T10:51:09+00:00\n"
+"PO-Revision-Date: 2024-01-02T10:51:09+00:00\n"
+"Language: \n"
 
 #. Plugin Name of the plugin
 msgid "IM Dynamic Content"
@@ -31,117 +29,117 @@ msgstr ""
 
 #: src/Factory/ACF/LayoutComponentFactory.php:22
 msgid "Global Pinned Content"
-msgstr ""
+msgstr "Globalna przypięta zawartość"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:34
 #: src/Factory/ACF/LayoutComponentFactory.php:39
 msgid "Position"
-msgstr ""
+msgstr "Pozycja"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:49
 #: src/Factory/ACF/LayoutComponentFactory.php:51
 msgid "Pinned content"
-msgstr ""
+msgstr "Przypięta zawartoś"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:60
 #: src/Factory/ACF/LayoutComponentFactory.php:82
 #: src/Factory/ACF/LayoutComponentFactory.php:160
 #: src/Factory/ACF/LayoutComponentFactory.php:180
 msgid "Widget Layout"
-msgstr ""
+msgstr "Układ widżetu"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:61
 msgid "Display configuration"
-msgstr ""
+msgstr "Konfiguracja wyświetlania"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:66
 msgid "Title"
-msgstr ""
+msgstr "Tytuł"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:71
 msgid "Category Labels"
-msgstr ""
+msgstr "Kategorie etykiety"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:74
 msgid "Use customiser setting"
-msgstr ""
+msgstr "Użyj ustawienia niestandardowego"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:75
 msgid "Visible"
-msgstr ""
+msgstr "Widoczny"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:76
 msgid "Hide"
-msgstr ""
+msgstr "Ukryty"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:84
 msgid "Content filtering configuration"
-msgstr ""
+msgstr "Konfiguracja filtru treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:89
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:91
 msgid "Select categories to filter by"
-msgstr ""
+msgstr "Wybierz kategorie do filtrowania"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:94
 msgid "All Categories"
-msgstr ""
+msgstr "Wszystkie kategorie"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:98
 msgid "Post Types"
-msgstr ""
+msgstr "Typy postów"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:100
 msgid "Select post types to filter by"
-msgstr ""
+msgstr "Wybierz typy postów do filtrowania"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:103
 msgid "All Post Types"
-msgstr ""
+msgstr "Wszystkie typy treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:106
 msgid "Content Types"
-msgstr ""
+msgstr "Typy treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:108
 msgid "Select content types to filter by"
-msgstr ""
+msgstr "Wybierz typy zawartości do filtrowania"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:111
 msgid "All Content Types"
-msgstr ""
+msgstr "Wszystkie typy treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:115
 msgid "Number of cards to include"
-msgstr ""
+msgstr "Liczba kart do włączenia"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:130
 msgid "Use smaller headline in cards"
-msgstr ""
+msgstr "Użyj mniejszego nagłówka na kartach"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:141
 msgid "Hide publish date on cards"
-msgstr ""
+msgstr "Ukryj datę publikacji na kartach"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:152
 msgid "Hide on mobile (Check if adding this to Sidebar)"
-msgstr ""
+msgstr "Ukryj na telefonie komórkowym (sprawdź, czy dodajesz to do paska bocznego)"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:161
 msgid "Content lookup configuration"
-msgstr ""
+msgstr "Konfiguracja wyszukiwania treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:167
 msgid "Show Related Content"
-msgstr ""
+msgstr "Pokaż powiązane treści"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:172
 msgid "Surface content related to the current page"
-msgstr ""
+msgstr "Treść związana z bieżącą stroną"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:181
 msgid "Content overrides"
-msgstr ""
+msgstr "Zastępowanie treści"
