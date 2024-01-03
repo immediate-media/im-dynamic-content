@@ -14,7 +14,6 @@ class WidgetDataProvider
 
         return [
             'isRelated' => $this->getBoolOption('is_related'),
-            'layout' => $this->getLayout(),
             'title' => $this->getField('title'),
             'showCardLabels' => $this->getCategoryLabels(),
             'categories' => $this->getCategories(),
@@ -30,12 +29,6 @@ class WidgetDataProvider
 
     private function getCategories(): array
     {
-        $categories = [];
-
-        if (!$this->getField('category_selection')) {
-            return $categories;
-        }
-
         $catIds = $this->getField('articles_category');
 
         return array_reduce($catIds, function ($carry, $categoryId) {
@@ -61,25 +54,12 @@ class WidgetDataProvider
 
     private function getType(): array
     {
-        if (!$this->getField('articles_selection')) {
-            return [];
-        }
-
         return $this->getField('articles_type') ?? [];
     }
 
     private function getContentType(): array
     {
-        if (!$this->getField('content_types_selection')) {
-            return [];
-        }
-
         return $this->getField('content_type') ?? [];
-    }
-
-    private function getlayout()
-    {
-        return $this->getField('layout') ? 'Vertical' : 'Horizontal';
     }
 
     private function getBoolOption(string $option): bool
