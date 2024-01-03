@@ -96,7 +96,10 @@ class WidgetDataProvider
     {
         $option = get_option('widget_' . $this->widgetType);
 
-        if (!isset($option[$this->widgetId]['acf'][$this->getFieldKey($fieldName)])) {
+        if (
+            !isset($option[$this->widgetId]['acf'][$this->getFieldKey($fieldName)]) ||
+            empty($option[$this->widgetId]['acf'][$this->getFieldKey($fieldName)])
+        ) {
             return $default;
         }
 
