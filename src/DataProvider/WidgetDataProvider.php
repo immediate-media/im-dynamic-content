@@ -29,7 +29,7 @@ class WidgetDataProvider
 
     private function getCategories(): array
     {
-        $catIds = $this->getField('articles_category');
+        $catIds = $this->getField('articles_category', []);
 
         return array_reduce($catIds, function ($carry, $categoryId) {
             $category = get_category($categoryId);
@@ -54,12 +54,12 @@ class WidgetDataProvider
 
     private function getType(): array
     {
-        return $this->getField('articles_type') ?? [];
+        return $this->getField('articles_type', []);
     }
 
     private function getContentType(): array
     {
-        return $this->getField('content_type') ?? [];
+        return $this->getField('content_type', []);
     }
 
     private function getBoolOption(string $option): bool

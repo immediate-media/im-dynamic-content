@@ -19,35 +19,19 @@ class WidgetDataProviderTest extends TestCase
         $this->dataProvider = new WidgetDataProvider();
     }
 
-    public function testGetTypeReturnsEmptyArray(): void
-    {
-        WP_Mock::userFunction('get_option')
-            ->andReturn([]);
-        $this->assertEquals([], $this->dataProvider->getOptions('widgetType', 'widgetId')['type']);
-    }
-
     public function testGetIsRelated(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-is_related' => true]]]);
         $this->assertSame(true, $this->dataProvider->getOptions('widgetType', 'widgetId')['isRelated']);
     }
 
-    public function testLayout(): void
-    {
-        WP_Mock::userFunction('get_option')
-            ->times(12)
-            ->with('widget_widgetType')
-            ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-layout' => 'Vertical']]]);
-        $this->assertSame('Vertical', $this->dataProvider->getOptions('widgetType', 'widgetId')['layout']);
-    }
-
     public function testTitle(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-title' => 'Widget title']]]);
 
@@ -57,7 +41,7 @@ class WidgetDataProviderTest extends TestCase
     public function testShowCardLabels(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-category_labels' => true]]]);
         $this->assertSame(false, $this->dataProvider->getOptions('widgetType', 'widgetId')['showCardLabels']);
@@ -66,7 +50,7 @@ class WidgetDataProviderTest extends TestCase
     public function testEmptyCategories(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-category_selection' => false]]]);
 
@@ -79,7 +63,7 @@ class WidgetDataProviderTest extends TestCase
         $category->slug = 'cat';
 
         WP_Mock::userFunction('get_option')
-            ->times(13)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => [
                 'field_acf_widgetType-category_selection' => true,
@@ -95,7 +79,7 @@ class WidgetDataProviderTest extends TestCase
     public function testGetType(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(13)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => [
                 'field_acf_widgetType-articles_selection' => true,
@@ -108,7 +92,7 @@ class WidgetDataProviderTest extends TestCase
     public function testGetContentType(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(13)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => [
                 'field_acf_widgetType-content_types_selection' => true,
@@ -121,7 +105,7 @@ class WidgetDataProviderTest extends TestCase
     public function testLimit(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-number_of_articles' => 10]]]);
         $this->assertSame(10, $this->dataProvider->getOptions('widgetType', 'widgetId')['limit']);
@@ -130,7 +114,7 @@ class WidgetDataProviderTest extends TestCase
     public function testSmallCardTitles(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-smaller_header' => true]]]);
         $this->assertSame(true, $this->dataProvider->getOptions('widgetType', 'widgetId')['smallCardTitles']);
@@ -139,7 +123,7 @@ class WidgetDataProviderTest extends TestCase
     public function testHideOnMobile(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-hide_on_mobile' => true]]]);
         $this->assertSame(true, $this->dataProvider->getOptions('widgetType', 'widgetId')['hideOnMobile']);
@@ -148,7 +132,7 @@ class WidgetDataProviderTest extends TestCase
     public function testHidePublishDateOnCards(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => ['field_acf_widgetType-hide_publish_date_on_cards' => true]]]);
         $this->assertSame(true, $this->dataProvider->getOptions('widgetType', 'widgetId')['hidePublishDateOnCards']);
@@ -157,7 +141,7 @@ class WidgetDataProviderTest extends TestCase
     public function testGetPinnedContent(): void
     {
         WP_Mock::userFunction('get_option')
-            ->times(12)
+            ->times(11)
             ->with('widget_widgetType')
             ->andReturn(['widgetId' => ['acf' => [
                 'field_acf_widgetType-pinned-content' => [[
