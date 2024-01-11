@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-02T13:55:49+00:00\n"
+"POT-Creation-Date: 2024-01-11T07:57:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 
@@ -44,9 +44,9 @@ msgid "Pinned content"
 msgstr ""
 
 #: src/Factory/ACF/LayoutComponentFactory.php:60
-#: src/Factory/ACF/LayoutComponentFactory.php:82
-#: src/Factory/ACF/LayoutComponentFactory.php:160
-#: src/Factory/ACF/LayoutComponentFactory.php:180
+#: src/Factory/ACF/LayoutComponentFactory.php:92
+#: src/Factory/ACF/LayoutComponentFactory.php:170
+#: src/Factory/ACF/LayoutComponentFactory.php:190
 msgid "Widget Layout"
 msgstr ""
 
@@ -74,74 +74,82 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:84
-msgid "Content filtering configuration"
+#: src/Factory/ACF/LayoutComponentFactory.php:82
+msgid "Button Text"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:89
-msgid "Categories"
-msgstr ""
-
-#: src/Factory/ACF/LayoutComponentFactory.php:91
-msgid "Select categories to filter by"
+#: src/Factory/ACF/LayoutComponentFactory.php:87
+msgid "Button Link"
 msgstr ""
 
 #: src/Factory/ACF/LayoutComponentFactory.php:94
+msgid "Content filtering configuration"
+msgstr ""
+
+#: src/Factory/ACF/LayoutComponentFactory.php:99
+msgid "Categories"
+msgstr ""
+
+#: src/Factory/ACF/LayoutComponentFactory.php:101
+msgid "Select categories to filter by"
+msgstr ""
+
+#: src/Factory/ACF/LayoutComponentFactory.php:104
 msgid "All Categories"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:98
+#: src/Factory/ACF/LayoutComponentFactory.php:108
 msgid "Post Types"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:100
+#: src/Factory/ACF/LayoutComponentFactory.php:110
 msgid "Select post types to filter by"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:103
+#: src/Factory/ACF/LayoutComponentFactory.php:113
 msgid "All Post Types"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:106
+#: src/Factory/ACF/LayoutComponentFactory.php:116
 msgid "Content Types"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:108
+#: src/Factory/ACF/LayoutComponentFactory.php:118
 msgid "Select content types to filter by"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:111
+#: src/Factory/ACF/LayoutComponentFactory.php:121
 msgid "All Content Types"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:115
+#: src/Factory/ACF/LayoutComponentFactory.php:125
 msgid "Number of cards to include"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:130
+#: src/Factory/ACF/LayoutComponentFactory.php:140
 msgid "Use smaller headline in cards"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:141
+#: src/Factory/ACF/LayoutComponentFactory.php:151
 msgid "Hide publish date on cards"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:152
+#: src/Factory/ACF/LayoutComponentFactory.php:162
 msgid "Hide on mobile (Check if adding this to Sidebar)"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:161
+#: src/Factory/ACF/LayoutComponentFactory.php:171
 msgid "Content lookup configuration"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:167
+#: src/Factory/ACF/LayoutComponentFactory.php:177
 msgid "Show Related Content"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:172
+#: src/Factory/ACF/LayoutComponentFactory.php:182
 msgid "Surface content related to the current page"
 msgstr ""
 
-#: src/Factory/ACF/LayoutComponentFactory.php:181
+#: src/Factory/ACF/LayoutComponentFactory.php:191
 msgid "Content overrides"
 msgstr ""
