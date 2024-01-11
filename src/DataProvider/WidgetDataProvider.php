@@ -16,6 +16,8 @@ class WidgetDataProvider
             'isRelated' => $this->getBoolOption('is_related'),
             'title' => $this->getField('title'),
             'showCardLabels' => $this->getCategoryLabels(),
+            'buttonText' => $this->getField('button_text'),
+            'buttonLink' => $this->getField('button_link'),
             'categories' => $this->getCategories(),
             'type' => $this->getType(),
             'contentType' => $this->getContentType(),

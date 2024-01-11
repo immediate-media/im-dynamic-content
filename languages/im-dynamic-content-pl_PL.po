@@ -42,9 +42,9 @@ msgid "Pinned content"
 msgstr "Przypięta zawartoś"
 
 #: src/Factory/ACF/LayoutComponentFactory.php:60
-#: src/Factory/ACF/LayoutComponentFactory.php:82
-#: src/Factory/ACF/LayoutComponentFactory.php:160
-#: src/Factory/ACF/LayoutComponentFactory.php:180
+#: src/Factory/ACF/LayoutComponentFactory.php:92
+#: src/Factory/ACF/LayoutComponentFactory.php:170
+#: src/Factory/ACF/LayoutComponentFactory.php:190
 msgid "Widget Layout"
 msgstr "Układ widżetu"
 
@@ -72,74 +72,82 @@ msgstr "Widoczny"
 msgid "Hide"
 msgstr "Ukryty"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:84
+#: src/Factory/ACF/LayoutComponentFactory.php:94
 msgid "Content filtering configuration"
 msgstr "Konfiguracja filtru treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:89
+#: src/Factory/ACF/LayoutComponentFactory.php:99
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:91
+#: src/Factory/ACF/LayoutComponentFactory.php:101
 msgid "Select categories to filter by"
 msgstr "Wybierz kategorie do filtrowania"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:94
+#: src/Factory/ACF/LayoutComponentFactory.php:104
 msgid "All Categories"
 msgstr "Wszystkie kategorie"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:98
+#: src/Factory/ACF/LayoutComponentFactory.php:108
 msgid "Post Types"
 msgstr "Typy postów"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:100
+#: src/Factory/ACF/LayoutComponentFactory.php:110
 msgid "Select post types to filter by"
 msgstr "Wybierz typy postów do filtrowania"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:103
+#: src/Factory/ACF/LayoutComponentFactory.php:113
 msgid "All Post Types"
 msgstr "Wszystkie typy treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:106
+#: src/Factory/ACF/LayoutComponentFactory.php:116
 msgid "Content Types"
 msgstr "Typy treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:108
+#: src/Factory/ACF/LayoutComponentFactory.php:118
 msgid "Select content types to filter by"
 msgstr "Wybierz typy zawartości do filtrowania"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:111
+#: src/Factory/ACF/LayoutComponentFactory.php:121
 msgid "All Content Types"
 msgstr "Wszystkie typy treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:115
+#: src/Factory/ACF/LayoutComponentFactory.php:125
 msgid "Number of cards to include"
 msgstr "Liczba kart do włączenia"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:130
+#: src/Factory/ACF/LayoutComponentFactory.php:140
 msgid "Use smaller headline in cards"
 msgstr "Użyj mniejszego nagłówka na kartach"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:141
+#: src/Factory/ACF/LayoutComponentFactory.php:151
 msgid "Hide publish date on cards"
 msgstr "Ukryj datę publikacji na kartach"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:152
+#: src/Factory/ACF/LayoutComponentFactory.php:162
 msgid "Hide on mobile (Check if adding this to Sidebar)"
 msgstr "Ukryj na telefonie komórkowym (sprawdź, czy dodajesz to do paska bocznego)"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:161
+#: src/Factory/ACF/LayoutComponentFactory.php:171
 msgid "Content lookup configuration"
 msgstr "Konfiguracja wyszukiwania treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:167
+#: src/Factory/ACF/LayoutComponentFactory.php:177
 msgid "Show Related Content"
 msgstr "Pokaż powiązane treści"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:172
+#: src/Factory/ACF/LayoutComponentFactory.php:182
 msgid "Surface content related to the current page"
 msgstr "Treść związana z bieżącą stroną"
 
-#: src/Factory/ACF/LayoutComponentFactory.php:181
+#: src/Factory/ACF/LayoutComponentFactory.php:191
 msgid "Content overrides"
 msgstr "Zastępowanie treści"
+
+#: src/Factory/ACF/LayoutComponentFactory.php:82
+msgid "Button Text"
+msgstr "Tekst przycisku"
+
+#: src/Factory/ACF/LayoutComponentFactory.php:87
+msgid "Button Link"
+msgstr "Odnośnik z przycisku"

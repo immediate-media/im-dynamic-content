@@ -79,6 +79,16 @@ class LayoutComponentFactory
                 'layout' => 'vertical',
                 'save_terms' => true,
             ]),
+            new Input(__('Button Text', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-button_text', 'text', [
+                'field_type' => 'text',
+                'return_format' => 'value',
+                'save_terms' => true,
+            ]),
+            new Input(__('Button Link', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-button_link', 'text', [
+                'field_type' => 'text',
+                'return_format' => 'value',
+                'save_terms' => true,
+            ]),
             new Input(__('Widget Layout', IM_DYNAMIC_CONTENT_PLUGIN_ID), $formKey . '-filter-message', 'message', [
                 'message' =>
                     '<hr/><em>' . __('Content filtering configuration', IM_DYNAMIC_CONTENT_PLUGIN_ID) . '</em>',
