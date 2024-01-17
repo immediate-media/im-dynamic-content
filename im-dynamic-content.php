@@ -14,6 +14,7 @@ if (! defined('ABSPATH')) {
 }
 
 define('IM_DYNAMIC_CONTENT_PLUGIN_ID', 'im-dynamic-content');
+define('IM_DYNAMIC_CONTENT_URL', plugin_dir_url(__FILE__));
 define('IM_DYNAMIC_CONTENT_DIR', plugin_dir_path(__FILE__));
 
 // The following lines of code allows you to specify a local '/views' directory

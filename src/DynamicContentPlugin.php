@@ -22,6 +22,8 @@ class DynamicContentPlugin extends WordPressPlugin
 
         $this->wordPress->addAction('plugins_loaded', $this->get(Action\LoadPluginTextDomain::class));
 
+        $this->wordPress->addAction('admin_enqueue_scripts', $this->get(Action\EnqueueStyles::class));
+
         $this->wordPress->addFilter(
             FilterConstants::SETTINGS_WIDGET_DATA_TRANSFORMATION_FILTER,
             $this->get(Filter\Admin\Settings\WidgetSettings::class)

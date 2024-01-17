@@ -1,0 +1,3 @@
+.dynamic-content-pinned .select2-chosen, .dynamic-content-pinned .select2-selection__rendered {
+    white-space: normal !important;
+}
