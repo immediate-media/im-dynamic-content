@@ -51,6 +51,9 @@ class LayoutComponentFactory
                 'label' => __('Pinned content', IM_DYNAMIC_CONTENT_PLUGIN_ID),
                 'name' => 'pinned_content',
                 'return_format' => 'id',
+                'wrapper' => [
+                    'class' => 'dynamic-content-pinned'
+                ],
             ]),
         );
 

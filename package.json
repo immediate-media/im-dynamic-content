@@ -1,0 +1,13 @@
+{
+	"name": "im-dynamic-contentn",
+	"version": "0.1.0",
+	"description": "IM Dynamic Content package.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build-styles": "wp-scripts start --webpack-src-dir=assets --output-path=dist"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.4.0"
+	}
+}
