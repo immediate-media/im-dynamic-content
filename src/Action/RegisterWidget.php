@@ -19,7 +19,7 @@ class RegisterWidget extends Action
      */
     public function action(...$args)
     {
-        register_widget($this->carouselWidget);
+        //register_widget($this->carouselWidget);
         // register_widget($this->gridWidget);
     }
 }
